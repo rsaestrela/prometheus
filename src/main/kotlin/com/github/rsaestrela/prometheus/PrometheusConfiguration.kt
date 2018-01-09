@@ -38,9 +38,9 @@ class PrometheusConfiguration {
 
 enum class MetricInstrument constructor(val collector: SimpleCollector<*>) {
 
-    SOCIAL_NETWORKS_IN_USE(Counter.build().name("social_network_in_use_counter")
-            .labelNames(MetricInstrumentLabel.SOCIAL_NETWORK.desc)
-            .help("Social network in use counter")
+    USE_SOCIAL_SITES(Counter.build().name("use_social_sites_counter")
+            .labelNames(MetricInstrumentLabel.USE_SOCIAL_SITES.desc)
+            .help("Use social sites counter")
             .create());
 
     companion object {
@@ -52,5 +52,5 @@ enum class MetricInstrument constructor(val collector: SimpleCollector<*>) {
 }
 
 enum class MetricInstrumentLabel constructor(val desc: String) {
-    SOCIAL_NETWORK("social_network")
+    USE_SOCIAL_SITES("use_social_sites")
 }

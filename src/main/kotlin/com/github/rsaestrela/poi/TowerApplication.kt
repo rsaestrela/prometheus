@@ -1,13 +1,16 @@
-package com.github.rsaestrela.election
+package com.github.rsaestrela.poi
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.scheduling.annotation.EnableScheduling
 import org.springframework.web.bind.annotation.CrossOrigin
 
+
 @SpringBootApplication
+@EnableScheduling
 @CrossOrigin
-class ElectionApplication
+class TowerApplication
 
 fun main(args: Array<String>) {
-    SpringApplication.run(ElectionApplication::class.java, *args)
+    SpringApplication.run(TowerApplication::class.java, *args)
 }

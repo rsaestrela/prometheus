@@ -1,4 +1,4 @@
-package com.github.rsaestrela.election
+package com.github.rsaestrela.poi
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.KotlinModule
@@ -14,10 +14,16 @@ import org.springframework.web.bind.annotation.RequestMethod
 
 @Controller
 @RequestMapping("/")
-class ElectionController(@Autowired val electionService: ElectionService) {
+class TowerController(@Autowired val towerService: TowerService) {
 
     @RequestMapping(method = [(RequestMethod.POST)])
-    fun voteRequest(@RequestBody voteRequest: VoteRequest): ResponseEntity<Any> {
+    fun log(@RequestBody logRequest: LogRequest): ResponseEntity<Any> {
+        towerService.incLog(logRequest)
+        towerService.incNumberOfPeople(logRequest)
+        towerService.observePrecipitation(logRequest)
+        towerService.observeWind(logRequest)
+        towerService.setNumberOfPeople(logRequest)
+        towerService.setTemperature(logRequest)
         return ResponseEntity.ok().build()
     }
 

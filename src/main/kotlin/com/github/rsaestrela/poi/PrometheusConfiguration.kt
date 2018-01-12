@@ -1,4 +1,4 @@
-package com.github.rsaestrela.election
+package com.github.rsaestrela.poi
 
 import io.prometheus.client.CollectorRegistry
 import io.prometheus.client.SimpleCollector

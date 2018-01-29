@@ -16,15 +16,14 @@ import java.util.*
 class LogSimulator {
 
     companion object {
-        val poiIds: Array<String> = arrayOf("1", "2", "3", "4", "5", "6", "7", "8", "9", "10")
+        val poiIds: Array<String> = arrayOf("clerigos", "praca_liberdade", "ribeira", "rossio", "bairro_alto")
     }
 
     @Scheduled(fixedRate = 5000)
     fun reportCurrentTime() {
         poiIds.forEach { id ->
-            val poiRequest = LogRequest(id, randInt(0, 100), randDouble(20, 30), randDouble(0, 10), randDouble(0, 5))
+            val poiRequest = LogRequest(id, randInt(0, 100), randDouble(20, 30), randDouble(0, 100), randDouble(0, 5))
             val jsonObject = JSONObject(poiRequest)
-            println(jsonObject)
             post("http://localhost:8080/", json = jsonObject)
         }
     }

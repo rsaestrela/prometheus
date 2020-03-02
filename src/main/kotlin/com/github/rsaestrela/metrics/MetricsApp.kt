@@ -1,4 +1,4 @@
-package com.github.rsaestrela.poi
+package com.github.rsaestrela.metrics
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.CrossOrigin
 @SpringBootApplication
 @EnableScheduling
 @CrossOrigin
-class TowerApplication
+class MetricsApp
 
 fun main(args: Array<String>) {
-    SpringApplication.run(TowerApplication::class.java, *args)
+    SpringApplication.run(MetricsApp::class.java, *args)
 }
